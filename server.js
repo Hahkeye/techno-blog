@@ -18,7 +18,8 @@ const sesh = {
 };
 
 
-Handlebars.registerPartial('postP','{{prefix}}');
+// Handlebars.registerPartial('postP','{{prefix}}');
+
 
 
 app.use(express.static('views'))
