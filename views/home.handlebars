@@ -1,0 +1,14 @@
+{{#each posts}}
+    <div id="posty-post" class="card" val="{{this.id}}">
+        
+        <div class="card-body">
+            <h2 class="card-title">{{this.title}}</h2>
+            <p class="card-subtitle mb-2 text-muted">created by {{this.[user.username]}} at {{this.[updatedAt]}}</p>
+            <p class="card-text">{{this.body}}</p>
+            
+        </div>
+    </div>
+{{/each}}
+{{#if loggedIn}}
+    <button onclick="/post/add">Add new post</button>
+{{/if}}

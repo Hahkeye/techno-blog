@@ -1,0 +1,32 @@
+<form action="/login" method="post">
+    <div>
+        <label>UserName</label>
+        <input type="text" name="username"/>
+        <label>Password</label>
+        <input type="password" name="password"/>
+        <button type="submit">Login</button>
+    </div>
+</form>
+<a href="/login/create">If you dont have an account click here to create one</a>
+
+{{!-- {{#if loggedIn}}
+    <form action="/login" method="post">
+        <div>
+            <label>UserName</label>
+            <input type="text" name="username"/>
+            <label>Password</label>
+            <input type="password" name="password"/>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+{{else}}
+    <form action="/login" method="post">
+        <div>
+            <label>UserName</label>
+            <input type="text" name="createUsername"/>
+            <label>Password</label>
+            <input type="password" name="createPassword"/>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+{{/if}} --}}

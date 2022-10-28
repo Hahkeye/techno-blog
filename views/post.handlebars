@@ -1,0 +1,17 @@
+<div>
+    <h1>{{post.title}}</h1>
+    <p>{{post.body}}</p>
+</div>
+{{#each comments}}
+    <div>
+        <p>{{this.[dataValues].[body]}}</p>
+    </div>
+{{/each}}
+<div>
+    <form action="/comment/add/" method="post">{{!-- idea --}}
+        <input name="post_id" value="{{post.id}}" type="hidden" />
+        <input name="creator_id" value="{{post.creator_id}}" type="hidden" />
+        <input type="text" name="body"/>
+        <button type="submit">Post comment</button>
+    </form>
+</div>
