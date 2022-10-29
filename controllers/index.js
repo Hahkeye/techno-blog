@@ -54,6 +54,20 @@ router.get("/dashboard/edit/:id", async (req,res) =>{
         res.redirect('/login');
     }
 });
+// router.get("/dashboard/edit/", async (req,res) =>{
+//     console.log(req.params.id);
+//     console.log(req.session.isLoggedIn);
+//     req.session.touch();
+//     if(req.session.isLoggedIn){
+//         let data = await Post.findByPk(req.params.id,{
+//             raw: true
+//         });
+//         console.log(data);
+//         res.render('edit',{loggedIn:req.session.isLoggedIn,posts: data});
+//     }else{
+//         res.redirect('/login');
+//     }
+// });
 
 router.get("*", async (req,res) =>{
     console.log("CATCH ALL");

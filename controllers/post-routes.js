@@ -25,11 +25,25 @@ router.get("/:id", async (req,res) =>{
     
 });
 
-// router.post("/add", async (req,res) =>{
-//     req.session.touch();
-//     if(req.session.isLoggedIn){
-//         console.log(req.body);
-//         let dat = await Comment.create(req.body)
-//     }
-// });
+router.get("/add/p", async (req,res) =>{
+    res.render('createPost');
+});
+router.post("/add/p", async (req,res) =>{
+    // req.session.touch();
+    // console.log(req.body);
+    
+    if(req.session.isLoggedIn){
+        req.body['creator_id']=req.session.uID;
+        console.log(req.body);
+        let dat = await Post.create(req.body)
+        res.redirect("/home");
+    }
+});
+router.get("/add", async (req,res) =>{
+    req.session.touch();
+    if(req.session.isLoggedIn){
+        console.log(req.body);
+        let dat = await Comment.create(req.body)
+    }
+});
 module.exports = router;

@@ -23,12 +23,12 @@ router.post("/", async (req,res) =>{
     if(check){
         // console.log(check);
         let password = await bcrypt.compare(req.body.password,check.password);
-        console.log(password);
+        // console.log(password);
         // console.log(req.session.id);
         if(password){
-            console.log(req.sessionID);
+            // console.log(req.sessionID);
             req.session.save( (err) => {
-                // console.log(err);
+                // console.log(check);
                 req.session.isLoggedIn = true;
                 req.session.uID = check.id
                 res.redirect("/dashboard");
